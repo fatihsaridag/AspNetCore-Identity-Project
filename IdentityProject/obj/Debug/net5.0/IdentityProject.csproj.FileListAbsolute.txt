@@ -157,3 +157,14 @@ C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Raz
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Home\SignIn.cshtml.g.cs
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Shared\_MemberLayout.cshtml.g.cs
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Member\Index.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Home\ResetPassword.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\MailKit.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\MimeKit.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\System.Formats.Asn1.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\System.Text.Encoding.CodePages.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Home\ResetPasswordConfirm.cshtml.g.cs
