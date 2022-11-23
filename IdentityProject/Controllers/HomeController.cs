@@ -3,6 +3,7 @@ using IdentityProject.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.Language;
+using System;
 using System.Threading.Tasks;
 
 namespace IdentityProject.Controllers
@@ -78,10 +79,21 @@ namespace IdentityProject.Controllers
                 var user = await _userManager.FindByEmailAsync(userLoginViewModel.Email); //Önce bir veritabanında var mı yok mu ona bakıyoruz 
                 if (user != null)
                 {
+                    if (await _userManager.IsLockedOutAsync(user))      //Eğer bu kullanıcı kilitli ise
+                    {
+                        ModelState.AddModelError("", "Hesabınız bir süreliğine kilitlenmiştir. Lütfen daha sonra tekrar deneyiniz. ");
+                        return View(userLoginViewModel);
+
+
+                    }
+
                     await _signInManager.SignOutAsync();    //Bizim önceden yazdıgımız cookie varsa onu bir önce silsin.
                     var result = await _signInManager.PasswordSignInAsync(user, userLoginViewModel.Password, userLoginViewModel.RememberMe, false);
                     if (result.Succeeded)
                     {
+                        await _userManager.ResetAccessFailedCountAsync(user);   // Veritabanındaki AccessFailedCount değerini sıfırladık
+
+
                         if (TempData["ReturnUrl"]!= null)
                         {
                             return Redirect(TempData["ReturnUrl"].ToString());
@@ -90,8 +102,20 @@ namespace IdentityProject.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Email Adresiniz veya şifreniz yanlış");
+                        //Eğer kullanıcı başarılı giriş yapamadıysa 
+                        await _userManager.AccessFailedAsync(user);
+                        int fail = await _userManager.GetAccessFailedCountAsync(user); // bu userın kaç başarısız giriş yaptığını aldık. 
+                        ModelState.AddModelError("", $"{fail} kez başarısız giriş");
+                        if (fail == 3)  //Eğer fail 3 olduysa 
+                        {
+                            await _userManager.SetLockoutEndDateAsync(user, new System.DateTimeOffset(DateTime.Now.AddMinutes(20)));
+                            ModelState.AddModelError("", "Hesabınız 3 başarısız girişten dolayı 20 dakika süreyle kilitlenmiştir. Lütfen daha sonra tekrar deneyiniz.");
 
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Geçersiz email veya şifre");
+                        }
                     }
                 }
                 else
