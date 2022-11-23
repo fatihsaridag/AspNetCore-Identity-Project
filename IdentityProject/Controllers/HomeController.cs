@@ -63,8 +63,9 @@ namespace IdentityProject.Controllers
 
 
         [HttpGet]
-        public IActionResult SignIn()
+        public IActionResult SignIn(string ReturnUrl)
         {
+            TempData["ReturnUrl"] = ReturnUrl;
             return View();
         }
 
@@ -78,7 +79,7 @@ namespace IdentityProject.Controllers
                 if (user != null)
                 {
                     await _signInManager.SignOutAsync();    //Bizim önceden yazdıgımız cookie varsa onu bir önce silsin.
-                    var result = await _signInManager.PasswordSignInAsync(user, userLoginViewModel.Password, true, false);
+                    var result = await _signInManager.PasswordSignInAsync(user, userLoginViewModel.Password, userLoginViewModel.RememberMe, false);
                     if (result.Succeeded)
                     {
                         if (TempData["ReturnUrl"]!= null)

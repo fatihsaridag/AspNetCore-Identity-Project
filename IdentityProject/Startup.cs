@@ -2,6 +2,7 @@ using IdentityProject.CutomValidation;
 using IdentityProject.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -50,6 +51,26 @@ namespace IdentityProject
 
 
             }).AddErrorDescriber<CustomIdentityErrorDescriber>().AddEntityFrameworkStores<IdentityProjectContext>().AddDefaultTokenProviders();
+
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = new PathString("/Home/SignIn");
+                options.LogoutPath = new PathString("/Member/Logout");
+                options.AccessDeniedPath = new PathString("/Member/AccessDenied");
+                options.Cookie = new CookieBuilder
+                {
+                    Name = "IdentityProject",
+                    HttpOnly= true,
+                    SameSite = SameSiteMode.Strict,
+                    SecurePolicy = CookieSecurePolicy.SameAsRequest
+                };
+                options.SlidingExpiration = true;
+                options.ExpireTimeSpan = System.TimeSpan.FromDays(7);
+            });
+
+
+
 
 
         }

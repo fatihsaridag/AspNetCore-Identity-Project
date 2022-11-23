@@ -155,3 +155,5 @@ C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Raz
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\libman.json
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Home\SignUp.cshtml.g.cs
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Home\SignIn.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Shared\_MemberLayout.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Member\Index.cshtml.g.cs
