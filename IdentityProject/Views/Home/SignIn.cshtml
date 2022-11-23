@@ -1,0 +1,73 @@
+﻿@model UserLoginViewModel
+
+
+<section class="vh-100 mt-4">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                     class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form method="post" asp-controller="Home" asp-action="SignIn">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                        <p class="lead fw-normal mb-0 me-3">Sosyal Medya İle Giriş Yap</p>
+                        <button type="button" class="btn btn-primary btn-floating mx-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-floating mx-1">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-floating mx-1">
+                            <i class="fab fa-linkedin-in"></i>
+                        </button>
+                    </div>
+
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" asp-for="Email"></label>
+                        <input type="email" id="form3Example3" class="form-control form-control-lg"
+                                asp-for="Email" />
+                        <span class="text-danger" asp-validation-for="Email"></span>
+
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <label class="form-label" asp-for="Password">Şifre</label>
+                        <input type="password" id="form3Example4" class="form-control form-control-lg"
+                             asp-for="Password" />
+                        <span class="text-danger" asp-validation-for="Password"></span>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Checkbox -->
+                        <div class="form-check mb-0">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                            <label class="form-check-label" for="form2Example3">
+                                Beni Hatırla
+                            </label>
+                        </div>
+                        <a href="#!" class="text-body">Şifemi Unuttum</a>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            Giriş
+                        </button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">
+                            Bir hesaba  sahip değil misin? <a  asp-controller="Home" asp-action="SignUp" class="link-danger">Kayıt Ol</a>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
