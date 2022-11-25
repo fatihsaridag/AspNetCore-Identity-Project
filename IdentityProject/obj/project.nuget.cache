@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "a3HmpilPg2OCGLcsgpj4hxzai4qXmn+yjj2q765kYQlR0T0Pt1QCciicnCFV4UESeGSN5Ap5u6NUxSh3tg5FWg==",
+  "dgSpecHash": "CoWusgoc2cV5PJ4nGT8I0jPwXR31pmkaKF2FJFOWWlOGZ54Hu5Y0gbAfVOJPEmVdJi5TLchgZC4a3KMlnbytKg==",
   "success": true,
   "projectFilePath": "C:\\Users\\fatih\\source\\repos\\IdentityProject\\IdentityProject\\IdentityProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fatih\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\mailkit\\3.4.2\\mailkit.3.4.2.nupkg.sha512",
+    "C:\\Users\\fatih\\.nuget\\packages\\mapster\\7.3.0\\mapster.7.3.0.nupkg.sha512",
+    "C:\\Users\\fatih\\.nuget\\packages\\mapster.core\\1.2.0\\mapster.core.1.2.0.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.7\\microsoft.aspnetcore.cryptography.internal.5.0.7.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.7\\microsoft.aspnetcore.cryptography.keyderivation.5.0.7.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

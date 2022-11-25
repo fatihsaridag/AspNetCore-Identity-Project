@@ -1,0 +1,37 @@
+﻿@using IdentityProject.Models
+@model List<AppUser>
+
+
+
+@{
+    ViewData["Title"] = "Users";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container mt-3">
+    <h3 class="text text-primary text-center"> Üyelerin Listesi </h3>
+    <table class="table table-bordered table-striped ">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Adı</th>
+                <th>Soyadı</th>
+                <th>Email</th>
+                <th>Kullanıcı Adı</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Email</td>
+                    <td>@item.UserName</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

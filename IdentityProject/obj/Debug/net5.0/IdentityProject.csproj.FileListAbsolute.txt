@@ -168,3 +168,10 @@ C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\Sys
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Text.Encoding.CodePages.dll
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Home\ResetPasswordConfirm.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\Mapster.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\bin\Debug\net5.0\Mapster.Core.dll
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Member\PasswordChange.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Member\UserEdit.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Admin\Users.cshtml.g.cs

@@ -23,6 +23,11 @@ namespace IdentityProject.Controllers
 
         public IActionResult Index()
         {
+
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Member");
+            }
             return View();
         }
 
@@ -40,7 +45,7 @@ namespace IdentityProject.Controllers
             if (ModelState.IsValid)
             {
                 AppUser user = new AppUser();
-                user.FirtName = userRegisterViewModel.FirstName;
+                user.FirstName = userRegisterViewModel.FirstName;
                 user.LastName = userRegisterViewModel.LastName;
                 user.Email = userRegisterViewModel.Email;
                 user.UserName = userRegisterViewModel.UserName;
@@ -148,7 +153,7 @@ namespace IdentityProject.Controllers
             {
                 // Token Oluşturuyoruz
                 string passwordResetToken = _userManager.GeneratePasswordResetTokenAsync(user).Result;
-                // Linki Burada gönderiyoruz
+                // Linki Burada gönderiyoruz Kullanıcı linke tıklayınca bu urle gelicek.
                 string passworResetLink = Url.Action("ResetPasswordConfirm", "Home", new
                 {
                     userId = user.Id,
@@ -172,8 +177,9 @@ namespace IdentityProject.Controllers
 
 
         [HttpGet]
-        public IActionResult ResetPasswordConfirm(string userId , string token)
+        public IActionResult ResetPasswordConfirm(string userId , string token) //deneme.com/Home/ResetPasswordConfirm? userId = jdkjasbhdtoken = kdlksamdl
         {
+            //yukarıdaki url deki parametreleri tempdata ile yakaladık ve posta actionununa göndereceğiz. 
             TempData["userId"] = userId;
             TempData["token"] = token;
             return View();
@@ -182,18 +188,18 @@ namespace IdentityProject.Controllers
         [HttpPost]
         public async Task<IActionResult> ResetPasswordConfirm([Bind("PasswordNew")]PasswordResetViewModel passwordResetViewModel)
         {
-            string token = TempData["token"].ToString();
-            string userId = TempData["userId"].ToString();
+            string token = TempData["token"].ToString();        //Tokenı aldık
+            string userId = TempData["userId"].ToString();      //UserId yi aldık 
 
-            AppUser user = await _userManager.FindByIdAsync(userId);
-            if (user != null)
+            AppUser user = await _userManager.FindByIdAsync(userId);        //userId ile böyle bir kullanıcı var mı yok mu kontrol ediyoruz. 
+            if (user != null)                                               // Eğer böyle bir kullanıcı var ise 
             {
-                IdentityResult result = await _userManager.ResetPasswordAsync(user, token, passwordResetViewModel.PasswordNew);
-                if (result.Succeeded) 
+                IdentityResult result = await _userManager.ResetPasswordAsync(user, token, passwordResetViewModel.PasswordNew); //IdentityResult ile şifre sıfırladık.
+                if (result.Succeeded) //Eğer işlem başarılı ise 
                 {
-                    await _userManager.UpdateSecurityStampAsync(user);
-                    TempData["passwordResetInfo"] = "Şifreniz başarıyla yenilenmiştir. Yeni şifreniz ile giriş yapabilirsiniz.";
-                    ViewBag.status = "success";
+                    await _userManager.UpdateSecurityStampAsync(user);      //SecurityStampını güncelledik(user,password gibi alanlar değişirse)
+                    TempData["passwordResetInfo"] = "Şifreniz başarıyla yenilenmiştir. Yeni şifreniz ile giriş yapabilirsiniz.";   
+                    ViewBag.status = "success";  //Viewe gönderelim.İf kontrolü yapalım.
                 }
                 else
                 {
@@ -210,7 +216,6 @@ namespace IdentityProject.Controllers
 
             return View(passwordResetViewModel);
         }
-
 
 
     }
