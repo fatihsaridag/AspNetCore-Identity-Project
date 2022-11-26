@@ -154,7 +154,23 @@ namespace IdentityProject.Controllers
         }
 
 
+        [Authorize(Policy = "EskisehirPolicy")]
+        public IActionResult Eskisehir()
+        {
+            return View();
+        }
 
+        [Authorize(Policy = "licencePolicy")]
+        public IActionResult LicensePolicy()
+        {
+            return View();
+        }
+
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 
 

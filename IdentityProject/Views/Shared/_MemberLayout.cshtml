@@ -58,6 +58,13 @@
                     <li class="nav-item mr-4">
                         <a  asp-controller="Member" asp-action="Manager" class="btn btn-outline-success">Manager </a>
                     </li>
+
+                    <li class="nav-item mr-4">
+                        <a asp-controller="Member" asp-action="Eskisehir" class="btn btn-outline-danger">Eskişehir </a>
+                    </li>
+                    <li class="nav-item mr-4">
+                        <a asp-controller="Member" asp-action="LicensePolicy" class="btn btn-outline-warning">Ehliyet </a>
+                    </li>
         </ul>
 
         <ul class="navbar-nav ms-auto ">
@@ -74,8 +81,8 @@
                 <p class="fw-light text-muted mb-0">fatihsaridag26@gmail.com</p>
               </div>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Profilim </a>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Kullanıcı Düzenle </a>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Şifremi Unuttum</a>
+              <a asp-controller="Member" asp-action="UserEdit"  class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Kullanıcı Düzenle </a>
+              <a asp-controller="Home" asp-action="ResetPassword" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Şifremi Unuttum</a>
               <a asp-controller="Member" asp-action="LogOut" asp-route-returnUrl="/Home/Index" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Çıkış Yap</a>
             </div>
           </li>

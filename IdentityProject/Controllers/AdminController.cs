@@ -171,5 +171,13 @@ namespace IdentityProject.Controllers
 
             return RedirectToAction("Users");                                               //Bu işlemler bitince "Users" sayfasına dön
         }
+
+
+        public IActionResult Claims()
+        {
+            return View(User.Claims.ToList());
+        }
+
+
     }
 }

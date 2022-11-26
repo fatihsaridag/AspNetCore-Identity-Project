@@ -1,5 +1,6 @@
 using IdentityProject.CutomValidation;
 using IdentityProject.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,6 +31,23 @@ namespace IdentityProject
         {
             services.AddRazorPages();
             services.AddMvc();
+
+
+            services.AddAuthorization(opts =>
+            {
+                opts.AddPolicy("EskisehirPolicy", policy =>
+                {
+                    policy.RequireClaim("city", "Eskiþehir");
+                });
+
+                opts.AddPolicy("licencePolicy", policy =>
+                {
+                    policy.RequireClaim("license");
+                });
+            });
+
+
+            services.AddScoped<IClaimsTransformation, ClaimProvider.ClaimProvider>();
 
             services.AddDbContext<IdentityProjectContext>(opts =>
             {
