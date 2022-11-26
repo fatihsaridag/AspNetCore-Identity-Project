@@ -175,3 +175,9 @@ C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Raz
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Admin\Users.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Admin\RoleCreate.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Admin\Roles.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Admin\RoleUpdate.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Admin\RoleAssign.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Member\Editor.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Member\Manager.cshtml.g.cs

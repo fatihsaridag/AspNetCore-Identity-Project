@@ -13,6 +13,5 @@ namespace IdentityProject.ViewModels
         public string UserName { get; set; }
         public string Job { get; set; }
         public string City { get; set; }
-
     }
 }

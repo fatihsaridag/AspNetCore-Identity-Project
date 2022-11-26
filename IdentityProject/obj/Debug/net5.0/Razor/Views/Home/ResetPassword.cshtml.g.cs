@@ -20,7 +20,7 @@ using IdentityProject.ViewModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"676ac2d7e3c86475dcc39f9162a94c6449f8e1c4", @"/Views/Home/ResetPassword.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"eb6e5512b6a868c33807686dc61999aa6f7bedce", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"760262f4b53acb788fd4f34f157800c78b805cb8", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Home_ResetPassword : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PasswordResetViewModel>
     #nullable disable

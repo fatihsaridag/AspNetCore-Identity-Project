@@ -48,15 +48,15 @@
 
         <ul class="navbar-nav text-center ml-3">
               <li class="nav-item mr-4 ml-3">
-                        <a class="btn btn-outline-primary">Admin</a>
+                        <a asp-controller="Admin" asp-action="Index" class="btn btn-outline-primary">Admin</a>
                     </li>
 
                     <li class="nav-item mr-4">
-                        <a class="btn btn-outline-info">Editor </a>
+                        <a asp-controller="Member" asp-action="Editor" class="btn btn-outline-info">Editor </a>
                     </li>
 
                     <li class="nav-item mr-4">
-                        <a class="btn btn-outline-success">Manager </a>
+                        <a  asp-controller="Member" asp-action="Manager" class="btn btn-outline-success">Manager </a>
                     </li>
         </ul>
 

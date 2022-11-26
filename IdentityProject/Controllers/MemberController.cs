@@ -141,6 +141,20 @@ namespace IdentityProject.Controllers
         }
 
 
+        [Authorize(Roles ="Editor,Admin")]
+        public IActionResult Editor()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Manager,Admin")]
+        public IActionResult Manager()
+        {
+            return View();
+        }
+
+
+
     }
 
 

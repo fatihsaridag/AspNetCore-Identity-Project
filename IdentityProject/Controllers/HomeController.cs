@@ -53,7 +53,7 @@ namespace IdentityProject.Controllers
                 IdentityResult result = await _userManager.CreateAsync(user, userRegisterViewModel.Password);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("SingIn");
+                    return RedirectToAction("SignIn","Home");
                 }
                 else
                 {
