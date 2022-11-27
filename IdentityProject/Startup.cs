@@ -1,6 +1,7 @@
 using IdentityProject.CutomValidation;
 using IdentityProject.Models;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -44,9 +45,17 @@ namespace IdentityProject
                 {
                     policy.RequireClaim("license");
                 });
+
+                opts.AddPolicy("ExchangePolicy", policy =>
+                {
+                    policy.AddRequirements(new ExpireDateExchangeRequirement());
+                });
+
+
+
             });
 
-
+            services.AddTransient<IAuthorizationHandler, ExpireDateExchangeHandler>();
             services.AddScoped<IClaimsTransformation, ClaimProvider.ClaimProvider>();
 
             services.AddDbContext<IdentityProjectContext>(opts =>

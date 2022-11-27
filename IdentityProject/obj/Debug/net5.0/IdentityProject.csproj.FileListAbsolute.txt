@@ -185,3 +185,4 @@ C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Raz
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Member\Eskisehir.cshtml.g.cs
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Member\LicensePolicy.cshtml.g.cs
 C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Member\AccessDenied.cshtml.g.cs
+C:\Users\fatih\source\repos\IdentityProject\IdentityProject\obj\Debug\net5.0\Razor\Views\Member\Exchange.cshtml.g.cs

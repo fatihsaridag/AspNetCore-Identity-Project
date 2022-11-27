@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.IO;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace IdentityProject.Controllers
@@ -171,6 +172,35 @@ namespace IdentityProject.Controllers
         {
             return View();
         }
+
+
+
+        //Claimi veritabanına ekleyeceğimiz yer
+        public async Task<IActionResult> ExchangeRedirect()
+        {
+            bool result = User.HasClaim(x => x.Type == "ExpireDateExchange");       //Benim belirteceğim claim var mı yoksa ona bir bakalım. 
+            if (!result)
+            {
+                Claim ExpireDateExchange = new Claim("ExpireDateExchange", DateTime.Now.AddDays(30).Date.ToShortDateString(), ClaimValueTypes.String, "Internal");
+                var user = await _userManager.FindByNameAsync(User.Identity.Name);
+                await _userManager.AddClaimAsync(user, ExpireDateExchange);
+                await _signInManager.SignOutAsync();
+                await _signInManager.SignInAsync(user, true);
+
+            }
+
+
+            return RedirectToAction("Exchange");
+
+        }
+
+
+        [Authorize(Policy = "ExchangePolicy")]
+        public IActionResult Exchange()
+        {
+            return View();
+        }
+
     }
 
 
