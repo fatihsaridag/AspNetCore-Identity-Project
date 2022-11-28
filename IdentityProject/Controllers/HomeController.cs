@@ -53,6 +53,16 @@ namespace IdentityProject.Controllers
                 IdentityResult result = await _userManager.CreateAsync(user, userRegisterViewModel.Password);
                 if (result.Succeeded)
                 {
+                    string confirmationToken = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    string link = Url.Action("ConfirmEmail", "Home", new
+                    {
+                        userId = user.Id,
+                        token = confirmationToken
+                    }, protocol:HttpContext.Request.Scheme
+                    );
+                    Helper.EmailConfirmation.SendEmail(link, user.Email);   //Kime göndericez ?
+
+
                     return RedirectToAction("SignIn","Home");
                 }
                 else
@@ -90,6 +100,11 @@ namespace IdentityProject.Controllers
                         return View(userLoginViewModel);
 
 
+                    }
+                    if (!await _userManager.IsEmailConfirmedAsync(user))
+                    {
+                        ModelState.AddModelError("", "Email Adresiniz onaylanmamıştır. Lütfen e-postanızı kontrol ediniz");
+                        return View(userLoginViewModel);
                     }
 
                     await _signInManager.SignOutAsync();    //Bizim önceden yazdıgımız cookie varsa onu bir önce silsin.
@@ -215,6 +230,23 @@ namespace IdentityProject.Controllers
             }
 
             return View(passwordResetViewModel);
+        }
+
+
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            IdentityResult result = await _userManager.ConfirmEmailAsync(user, token);
+            if (result.Succeeded)
+            {
+                ViewBag.status = "Email adresiniz onaylanmıştır. Login ekranından giriş yapabilirsiniz.";
+            }
+            else
+            {
+                ViewBag.status = "Bir hata meydana geldi lütfen daha sonra tekrar deneyiniz. ";
+            }
+
+            return View();
         }
 
 

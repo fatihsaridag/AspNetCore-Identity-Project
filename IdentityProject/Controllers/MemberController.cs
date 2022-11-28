@@ -178,8 +178,8 @@ namespace IdentityProject.Controllers
         //Claimi veritabanına ekleyeceğimiz yer
         public async Task<IActionResult> ExchangeRedirect()
         {
-            bool result = User.HasClaim(x => x.Type == "ExpireDateExchange");       //Benim belirteceğim claim var mı yoksa ona bir bakalım. 
-            if (!result)
+            bool result = User.HasClaim(x => x.Type == "ExpireDateExchange");       //Benim belirteceğim claim var mı yoksa ona bir bakalım.  
+            if (!result)                                                            //Eğer böyle bir claim yoksa ekleyeceğiz.
             {
                 Claim ExpireDateExchange = new Claim("ExpireDateExchange", DateTime.Now.AddDays(30).Date.ToShortDateString(), ClaimValueTypes.String, "Internal");
                 var user = await _userManager.FindByNameAsync(User.Identity.Name);
